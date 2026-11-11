@@ -1,0 +1,54 @@
+
+import { useState } from "react";
+import "./Counter.css";
+
+function Counter() {
+    const [count, update] = useState(0);
+
+    function increment() {
+        update(prev => (prev + 1) % 10000);
+    }
+
+    function decrement() {
+        update(prev => Math.max(0, prev - 1));
+    }
+
+    return (
+        <main className="counter-page">
+            <div className="counter-device">
+                <div className="indicator"></div>
+
+                <div className="display-frame">
+                    <div className="digital-display">
+                        {String(count).padStart(4, "0").split("").map((digit, index) => (
+                            <span key={index} className="digit">
+                                {digit}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="control-panel">
+                    <button
+                        className="plus-button"
+                        onClick={increment}
+                        aria-label="Increment"
+                    >
+                        +
+                    </button>
+
+                    <button
+                        className="minus-button"
+                        onClick={decrement}
+                        disabled={count === 0}
+                        aria-label="Decrement"
+                    >
+                        −
+                    </button>
+                </div>
+            </div>
+        </main>
+    );
+}
+
+export default Counter;

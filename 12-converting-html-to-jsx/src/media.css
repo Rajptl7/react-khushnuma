@@ -1,0 +1,57 @@
+/* xl */
+@media (max-width:1199px){
+    .container{
+        max-width: 1140px;
+    }
+}
+
+/* lg 992 */
+@media (max-width:991px){
+    .container{
+        max-width: 960px;
+    }
+
+    .col-3{
+        width: 50%;
+    }
+
+    .footer .col-3{
+        width: 50%;
+    }
+}
+
+/* md 768 */
+@media (max-width:767px){
+    .container{
+        max-width: 720px;
+    }
+
+    .col-3{
+        width: 100%;
+    }
+
+    .col-6{
+        width: 100%;
+    }
+
+    .Categories .row .col-6 .row .col-6{
+        width: 100%;
+    }
+}
+
+/* sm 576 */
+@media (max-width:575px){
+    .container{
+        max-width: 100%;
+    }
+
+    .col-3,
+    .col-6,
+    .col-12{
+        width: 100%;
+    }
+
+    header nav ul{
+        flex-direction: column;
+    }
+}
